@@ -1,13 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Routes, Route} from "react-router-dom";
 import axios from "axios";
+import {NewsType} from "./types";
 import Navbar from "./components/Navbar/Navbar";
 import OurStory from "./containers/OurStory/OurStory";
 import Membership from "./containers/Membership/Membership";
 import Write from "./containers/Write/Write";
 import Home from "./containers/Home/Home";
 import News from "./containers/News/News";
-import {NewsType} from "./types";
 import Login from "./containers/Login/Login";
 import LoginVia from "./components/LoginVia/LoginVia";
 
@@ -39,7 +39,7 @@ function App() {
           )}>
             <Route path="continue" element={(
               news.map(newsOne => {
-                return <News article={newsOne}/>
+                return <News key={Math.random()} article={newsOne}/>
               })
             )}/>
           </Route>
@@ -59,6 +59,11 @@ function App() {
               <LoginVia service={service}/>
             )}></Route>
           </Route>
+          <Route path="*" element={(
+            <div className="text-center">
+              <span className="fs-1 fw-bold">Page not found</span>
+            </div>
+          )}/>
         </Routes>
       </main>
     </>

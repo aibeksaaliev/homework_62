@@ -1,6 +1,5 @@
 import React from 'react';
 import {NewsType} from "../../types";
-import * as url from "url";
 
 interface NewsProps {
   article: NewsType;
