@@ -1,18 +1,21 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 interface LoginViaProps {
   service: string;
 }
 
 const LoginVia: React.FC<LoginViaProps> = ({service}) => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <form className="mt-3">
-        <div className="mb-3 text-center">
-          <input type="email" className="form-control" placeholder={service}/>
+      <div className="mt-3">
+        <form className="mb-3 text-center" onSubmit={(e) => {e.preventDefault(); navigate('/')}}>
+          <input required type="email" className="form-control" placeholder={service}/>
           <button type="submit" className="btn btn-dark mt-2">Register</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };

@@ -51,7 +51,13 @@ function App() {
           <Route path="/login" element={(
             <Login getService={setService}/>
           )}>
-            <Route path="continue" element={(
+            <Route path="/login/via-google" element={(
+              <LoginVia service={service}/>
+            )}></Route>
+            <Route path="/login/via-linkedin" element={(
+              <LoginVia service={service}/>
+            )}></Route>
+            <Route path="/login/via-github" element={(
               <LoginVia service={service}/>
             )}></Route>
           </Route>
