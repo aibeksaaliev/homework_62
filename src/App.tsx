@@ -20,7 +20,7 @@ function App() {
     const newsResponse = await axios.get(NEWS_API_URL);
     const fetchedNews: NewsType [] = newsResponse.data.articles;
     setNews(fetchedNews);
-  }, [])
+  }, []);
 
   useEffect(() => {
     fetchNews().catch(console.error);
