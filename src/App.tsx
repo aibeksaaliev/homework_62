@@ -5,7 +5,6 @@ import {NewsType} from "./types";
 import Navbar from "./components/Navbar/Navbar";
 import OurStory from "./containers/OurStory/OurStory";
 import Membership from "./containers/Membership/Membership";
-import Write from "./containers/Write/Write";
 import Home from "./containers/Home/Home";
 import News from "./containers/News/News";
 import Login from "./containers/Login/Login";
@@ -48,9 +47,6 @@ function App() {
           )}/>
           <Route path="/membership" element={(
             <Membership/>
-          )}/>
-          <Route path="/write" element={(
-            <Write/>
           )}/>
           <Route path="/login" element={(
             <Login getService={setService}/>
